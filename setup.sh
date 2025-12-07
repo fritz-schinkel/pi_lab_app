@@ -5,7 +5,7 @@ set -e
 
 ### CONFIGURATION VARIABLES ###
 SSID="PiDAtutAP"
-WIFI_PASS="411441"
+WIFI_PASS="41144114"
 AP_IP="192.168.4.1"
 RANGE_START="192.168.4.10"
 RANGE_END="192.168.4.50"
@@ -157,12 +157,13 @@ systemctl status juplabd --no-pager
 EOF
 chmod +x /usr/local/bin/show_ap_config
 
+
 echo "[9/10] Enabling / disabling services..."
-systemctl disable --now NetworkManager
-#systemctl disable --now wpa_supplicant
-systemctl enable --now dnsmasq
-systemctl enable --now hostapd
-systemctl enable --now juplabd.service
+systemctl enable dnsmasq
+systemctl enable hostapd
+systemctl enable juplabd.service
+systemctl disable NetworkManager
+systemctl disable wpa_supplicant
 
 
 echo "[10/10] Setup complete. Reboot recommended."
