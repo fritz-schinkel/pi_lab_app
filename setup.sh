@@ -30,7 +30,7 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/opt/jupyterlab/venv/bin/jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password=''
-WorkingDirectory=/opt/jupyterlab
+WorkingDirectory=/home/${JUP_USER}
 User=${JUP_USER}
 Restart=always
 
