@@ -11,13 +11,13 @@ AP_IP="192.168.4.1"
 RANGE_START="192.168.4.10"
 RANGE_END="192.168.4.50"
 
-if [ $(JUP_USER) = '<your username>' ] || [ $(AP_SSID) = '<your AP SSID>' ] || [ $(AP_WIFI_PASS) = '<your AP passphrase, min 8 chars>' ]; then
+if [ "${JUP_USER}" = '<your username>' ] || [ "${AP_SSID}" = '<your AP SSID>' ] || [ "${AP_WIFI_PASS}" = '<your AP passphrase, min 8 chars>' ]; then
 	echo "Please adapt configuration variables at the beginning of the script!"
 	exit 1
 fi
 
 echo "[1/10] Updating system and installing packages..."
-sudo apt update && apt -y upgrade
+sudo apt update && sudo apt -y upgrade
 sudo apt -y install dhcpcd dnsmasq hostapd git python3-venv python3-pip python3-full
 
 echo "[2/10] Creating JupyterLab environment..."

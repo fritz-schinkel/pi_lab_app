@@ -14,12 +14,12 @@ Connect the pi with keyboard, monitor and power. Enter your preferred settings a
  ```
  Set the local WLAN and activate SSH.
 
- If you could activate SSH during image creation, then you don't need the keyboard and monitor connected to the pi. You may skip that steü and connect directly via SSH to the pi in your local WLAN.
+ If you could activate SSH during image creation, then you don't need the keyboard and monitor connected to the pi. You may skip that step and connect directly via SSH to the pi in your local WLAN.
 
 ## Setup the Software
 If not available first install git on your pi:
 ```
-sudo apt install git
+sudo apt -y install git
 ```
 
 Next get the base components from git. Make sure to have a good connection to your WLAN to avoid a long setup process. Clone repository ``pi_da_tut`` to your system:
