@@ -9,6 +9,7 @@ WIFI_PASS="41144114"
 AP_IP="192.168.4.1"
 RANGE_START="192.168.4.10"
 RANGE_END="192.168.4.50"
+JUP_USER="andreas"
 
 echo "[1/10] Updating system and installing packages..."
 apt update && apt -y upgrade
@@ -29,8 +30,8 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/opt/jupyterlab/venv/bin/jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password=''
-WorkingDirectory=/opt/jupyterlab
-User=pi
+WorkingDirectory=/home/${JUP_USER}
+User=${JUP_USER}
 Restart=always
 
 [Install]
