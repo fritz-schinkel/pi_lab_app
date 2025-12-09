@@ -1,19 +1,25 @@
 #!/usr/bin/env bash
-# Complete Raspberry Pi Access Point Setup with JupyterLab Service
+# Raspberry Pi Access Point Setup with JupyterLab Service
 
 set -e
 
 ### CONFIGURATION VARIABLES ###
-JUP_USER="<your username>"
-AP_SSID="<your AP SSID>"
-AP_WIFI_PASS="<your AP passphrase, min 8 chars>"
-AP_IP="192.168.4.1"
-RANGE_START="192.168.4.10"
-RANGE_END="192.168.4.50"
+JUP_USER="$(whoami)"
+AP_SSID="LabApp"
+AP_WIFI_PASS="your_AP_passphrase_min_8_chars"
+AP_IP="192.168.42.41"
+RANGE_START="192.168.4.1"
+RANGE_END="192.168.4.40"
 
-if [ "${JUP_USER}" = '<your username>' ] || [ "${AP_SSID}" = '<your AP SSID>' ] || [ "${AP_WIFI_PASS}" = '<your AP passphrase, min 8 chars>' ]; then
-	echo "Please adapt configuration variables at the beginning of the script!"
-	exit 1
+if [ "${JUP_USER}" = "$(whoami)" ] || [ "${AP_SSID}" = "LabApp" ] || [ "${AP_WIFI_PASS}" = "your_AP_passphrase_min_8_chars" ]; then
+  read -p "Do you want to adapt configuration variables at the beginning of the script? (y/n) " choice
+
+  if [[ "$choice" =~ ^[Yy]$ ]]; then
+    echo "Please adapt configuration variables at the beginning of the script!"
+    exit 1
+  else
+    echo "Continuing with default values for all variables."
+  fi
 fi
 
 echo "[1/10] Updating system and installing packages..."
