@@ -11,10 +11,10 @@ Both are suited, the second one ist older and more stable. Select one of those. 
 ## First Power Up
  If you could activate SSH during image creation, then you don't need a keyboard or monitor connected to your pi. You can power up your pi and connect directly via SSH to your defined user on the pi in your local WLAN. You can skip the rest of this section.
 
-Otherwise connect the pi with keyboard, monitor and power. Enter your preferred settings and user credentials. Then sign as the new user. Start the configuration menu:
- ```
+Otherwise connect the pi with keyboard, monitor and power. Enter your preferred settings and user credentials. Then sign in as the new user. Start the configuration menu:
+ ````commandline
  sudo raspi-config
- ```
+ ````
  Set the local WLAN and activate SSH. You can now complete the setup from this console or you can connect via SSH to your defined user on the pi in your local WLAN. The latter is convenient for copying the directives from this README instead of typing.
 
 ## Setup the Software
